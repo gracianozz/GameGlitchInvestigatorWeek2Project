@@ -4,7 +4,7 @@ import streamlit as st
 def get_range_for_difficulty(difficulty: str):
     if difficulty == "Easy":
         return 1, 20
-    if difficulty == "Normal":
+    if difficulty == "Normal":   #FIX ME: Wrong ranges for difficulties
         return 1, 100
     if difficulty == "Hard":
         return 1, 50
@@ -35,7 +35,7 @@ def check_guess(guess, secret):
 
     try:
         if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
+            return "Too High", "📈 Go HIGHER!"   #FIX ME: Misleading hints when guessing
         else:
             return "Too Low", "📉 Go LOWER!"
     except TypeError:
@@ -133,7 +133,7 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(1, 100)  #FIX ME: Secret number range does not change with difficulty
     st.success("New game started.")
     st.rerun()
 
