@@ -107,7 +107,7 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(low, high)
+    st.session_state.secret = random.randint(low, high) #FIX: New game button now correctly resets the secret number within the appropriate range for the selected difficulty using Copilot Agent Mode.
     st.success("New game started.")
     st.rerun()
 

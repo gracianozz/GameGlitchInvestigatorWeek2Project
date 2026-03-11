@@ -2,7 +2,7 @@ def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
     if difficulty == "Easy":
         return 1, 20
-    if difficulty == "Normal":  
+    if difficulty == "Normal":  #FIX: Refactored logic into logic_utils.py , and ranges are adjusted based on difficulty using Copilot Agent Mode.
         return 1, 50
     if difficulty == "Hard":
         return 1, 100
@@ -25,7 +25,7 @@ def check_guess(guess, secret):
     outcome examples: "Win", "Too High", "Too Low"
     """
     if guess == secret:
-        return "Win", "🎉 Correct!"
+        return "Win", "🎉 Correct!"  #FIX: Moved this function to logic_utils.py, and corrected messages to display correct hints.
 
     if guess > secret:
         return "Too High", "📉 Go LOWER!"
